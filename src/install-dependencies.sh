@@ -89,10 +89,6 @@ make zopflipng
 
 printf "\\n\\n------------------------------\\nTesting Builds...\\n------------------------------\\n"
 
-ls -la $HOME
-ls -la $PNGQUANT_BUILD_DIR
-ls -la $ZOPFLIPNG_BUILD_DIR
-
 printf "[?] %s test...\\n\\n" "$PNGQUANT_EXE"
 if [ -f "$PNGQUANT_EXE" ]; then
     "$PNGQUANT_EXE" --help
