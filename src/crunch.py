@@ -283,21 +283,6 @@ def optimize_png(png_path):
         else:
             raise e
 
-    # Check file size post-optimization and report comparison with pre-optimization file
-    img.get_post_filesize()
-    percent = img.get_compression_percent()
-    percent_string = '{0:.2f}'.format(percent)
-
-    # report percent original file size / post file path / size (bytes) to stdout (command line executable)
-    stdstream_lock.acquire()
-    print("[ " + percent_string + "% ] " + img.post_filepath + " (" + str(img.post_size) + " bytes)")
-    stdstream_lock.release()
-
-    # report percent original file size / post file path / size (bytes) to stdout (macOS GUI + right-click service)
-    if is_gui(sys.argv):
-        log_info("[ " + percent_string + "% ] " +
-                 img.post_filepath + " (" + str(img.post_size) + " bytes)")
-
 
 def fix_filepath_args(args):
     arg_list = []
